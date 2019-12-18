@@ -102,14 +102,14 @@ namespace GildedRose.Console
 
         public void Conjured(int index) {
             if (Items[index].Quality>low_value_of_quality)
-            {
-                if (Items[index].Quality == 1) 
-                {
-                    decreasedQuality_one(index);
+            {//because quality can't be nagative 
+                if (Items[index].Quality > 1) 
+                {Items[index].Quality = Items[index].Quality - 2;
+                   
                 }
                 else
-                {
-                    Items[index].Quality = Items[index].Quality - 2;
+                {//if quality become 1 decrease by one 
+                    decreasedQuality_one(index); 
                 }
             }
                 }
